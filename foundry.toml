@@ -1,10 +1,17 @@
 [profile.default]
-src = "src"
-out = "out"
-libs = ["lib"]
+solc_version = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 20_000
+libs = ["node_modules", "lib"]
 
 remappings = [
-        "@chainlink/=node_modules/@chainlink/"
+    "@chainlink/=node_modules/@chainlink/",
+    "@openzeppelin/=node_modules/@openzeppelin/",
+    "@pythnetwork=node_modules/@pythnetwork/",
+    "solady/src/=node_modules/solady/src/",
+    "@uniswap/permit2/=node_modules/@uniswap/permit2/",
+    "@redstone-finance/evm-connector/=node_modules/@redstone-finance/evm-connector/",
 ]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
